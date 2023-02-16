@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@436d40c/dist/aframe-extras.min.js"></script>
+    <!-- <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script> -->
+</head>
+
+<body>
+
+    <a-scene>
+
+        <a-assets>
+            <a-entity position="0 0 -2">
+                <img id="straw" src="assets/straw.jpeg">
+                <img id="grass" src="assets/grass.jpeg">
+                <img id="bricks" src="assets/bricks.jpeg">
+                <img id="sticks" src="assets/sticks.jpeg">
+                <a-asset-item id="piggy" src="assets/pink_pig_plush_3xp/scene.gltf"></a-asset-item>
+                <a-asset-item id="wolf" src="assets/pirate_wolf/scene.gltf"></a-asset-item>
+                <a-asset-item id="campfire" src="assets/campfire_with_pot/scene.gltf"></a-asset-item>
+        </a-assets>
+
+        <!-- Motion -->
+        <a-entity id="rig" movement-controls="fly: true; speed: 0.3">
+            <a-entity camera position="0 1.6 0" look-controls>
+            </a-entity>
+        </a-entity>
+
+
+
+        <!-- Sky -->
+        <a-sky color="#c6e5ff"></a-sky>
+        <!-- ground -->
+        <a-plane width="100" color="green" rotation="90 0 0" side="double" height="100" position="0 -1 0"></a-plane>
+
+        <a-entity gltf-model="#campfire" position="2 -1 -6" scale="2 2 2" rotation="0 270 0"> </a-entity>
+        <a-entity gltf-model="#piggy" scale=".05 .05 .05" position="-1.8 0 -4.3" rotation="0 180 0"></a-entity>
+        <a-entity gltf-model="#wolf" scale=".25 .25 .25" position="-1 -1 -.5" rotation="0 180 0"></a-entity>
+
+
+        <!-- MIDDLE HOUSE -->
+        <a-entity position="0 0 -10" rotation=" 0 90 0">
+            <!-- pig -->
+            <a-entity gltf-model="#piggy" scale=".05 .05 .05" position="-1.5 -1 -1.5" height="5"
+                rotation="0 270 0"></a-entity>
+            <!-- Left wall -->
+            <a-box position="-1.5 0 -2.5" rotation="0 90 0" width="1" height="3" depth="0.1" src="#straw"></a-box>
+            <!-- Left wall  -->
+            <a-box position="-1.5 0 -.5" rotation="0 90 0" width="1" height="3" depth="0.1" src="#straw"></a-box>
+            <!-- left wall top -->
+            <a-box position="-1.5 1 -1.5" rotation="0 90 0" width="1" height="1" depth="0.1" src="#straw"></a-box>
+
+            <!-- Right wall -->
+            <a-box position="1.5 0 -1.5" rotation="0 90 0" width="3" height="3" depth="0.1" src="#straw"></a-box>
+
+            <!-- Front wall -->
+            <a-box position="0 0 -3" rotation="0 0 0" width="3" height="3" depth="0.1" src="#straw"></a-box>
+
+            <!-- Back wall -->
+            <a-box position="0 0 0" rotation="0 180 0" width="3" height="3" depth="0.1" src="#straw"></a-box>
+
+            <!-- left roof -->
+            <a-box position="0 1.5 -3" rotation="45 0 0" width="3" height="4.3" depth="0.1" src="#straw"></a-box>
+            <!-- Right roof -->
+            <a-box position="0 1.5 0" rotation="-45 0 0" width="3" height="4.3" depth="0.1" src="#straw"></a-box>
+            <!-- roof triangles -->
+            <a-triangle position="1.5 2.5 -1.5" width="50" height="10" scale="2 1 1" rotation="0 90 0" side="double"
+                material="" geometry="vertexB: -0.75 -1 0; vertexC: 0.75 -1 0" src="#straw"></a-triangle>
+            <a-triangle position="-1.5 2.5 -1.5" width="50" height="10" scale="2 1 1" rotation="0 90 0" side="double"
+                material="" geometry="vertexB: -0.75 -1 0; vertexC: 0.75 -1 0" src="#straw"></a-triangle>
+
+
+
+        </a-entity>
+
+        <!-- HOUSE ON THE LEFT -->
+        <a-entity position="8 0 -10" rotation="0 90 0">
+            <!-- pig -->
+            <a-entity gltf-model="#piggy" scale=".05 .05 .05" position="-1.5 -1 -1.5" height="5"
+                rotation="0 270 0"></a-entity>
+            <!-- Left wall -->
+            <a-box position="-1.5 0 -2.5" rotation="0 90 0" width="1" height="3" depth="0.1" src="#sticks"></a-box>
+            <!-- Left wall  -->
+            <a-box position="-1.5 0 -.5" rotation="0 90 0" width="1" height="3" depth="0.1" src="#sticks"></a-box>
+            <!-- left wall top -->
+            <a-box position="-1.5 1 -1.5" rotation="0 90 0" width="1" height="1" depth="0.1" src="#sticks"></a-box>
+
+            <!-- Right wall -->
+            <a-box position="1.5 0 -1.5" rotation="0 90 0" width="3" height="3" depth="0.1" src="#sticks"></a-box>
+
+            <!-- Front wall -->
+            <a-box position="0 0 -3" rotation="0 0 0" width="3" height="3" depth="0.1" src="#sticks"></a-box>
+
+            <!-- Back wall -->
+            <a-box position="0 0 0" rotation="0 180 0" width="3" height="3" depth="0.1" src="#sticks"></a-box>
+
+            <!-- left roof -->
+            <a-box position="0 1.5 -3" rotation="45 0 0" width="3" height="4.3" depth="0.1" src="#sticks"></a-box>
+            <!-- Right roof -->
+            <a-box position="0 1.5 0" rotation="-45 0 0" width="3" height="4.3" depth="0.1" src="#sticks"></a-box>
+            <!-- roof triangles -->
+            <a-triangle position="1.5 2.5 -1.5" width="50" height="10" scale="2 1 1" rotation="0 90 0" side="double"
+                material="" geometry="vertexB: -0.75 -1 0; vertexC: 0.75 -1 0" src="#sticks"></a-triangle>
+            <a-triangle position="-1.5 2.5 -1.5" width="50" height="10" scale="2 1 1" rotation="0 90 0" side="double"
+                material="" geometry="vertexB: -0.75 -1 0; vertexC: 0.75 -1 0" src="#sticks"></a-triangle>
+        </a-entity>
+
+
+        <!-- HOUSE ON THE RIGHT -->
+        <a-entity position="-8 0 -10" rotation="0 90 0">
+            <!-- pig -->
+            <a-entity gltf-model="#piggy" scale=".05 .05 .05" position="-1.5 -1 -1.5" height="5"
+                rotation="0 270 0"></a-entity>
+            <!-- Left wall -->
+            <a-box position="-1.5 0 -2.5" rotation="0 90 0" width="1" height="3" depth="0.1" src="#bricks"></a-box>
+            <!-- Left wall  -->
+            <a-box position="-1.5 0 -.5" rotation="0 90 0" width="1" height="3" depth="0.1" src="#bricks"></a-box>
+            <!-- left wall top -->
+            <a-box position="-1.5 1 -1.5" rotation="0 90 0" width="1" height="1" depth="0.1" src="#bricks"></a-box>
+
+            <!-- Right wall -->
+            <a-box position="1.5 0 -1.5" rotation="0 90 0" width="3" height="3" depth="0.1" src="#bricks"></a-box>
+
+            <!-- Front wall -->
+            <a-box position="0 0 -3" rotation="0 0 0" width="3" height="3" depth="0.1" src="#bricks"></a-box>
+
+            <!-- Back wall -->
+            <a-box position="0 0 0" rotation="0 180 0" width="3" height="3" depth="0.1" src="#bricks"></a-box>
+
+            <!-- left roof -->
+            <a-box position="0 1.5 -3" rotation="45 0 0" width="3" height="4.3" depth="0.1" src="#bricks"></a-box>
+            <!-- Right roof -->
+            <a-box position="0 1.5 0" rotation="-45 0 0" width="3" height="4.3" depth="0.1" src="#bricks"></a-box>
+            <!-- roof triangles -->
+            <a-triangle position="1.5 2.5 -1.5" width="50" height="10" scale="2 1 1" rotation="0 90 0" side="double"
+                material="" geometry="vertexB: -0.75 -1 0; vertexC: 0.75 -1 0" src="#bricks"></a-triangle>
+            <a-triangle position="-1.5 2.5 -1.5" width="50" height="10" scale="2 1 1" rotation="0 90 0" side="double"
+                material="" geometry="vertexB: -0.75 -1 0; vertexC: 0.75 -1 0" src="#bricks"></a-triangle>
+
+
+
+        </a-entity>
+
+
+
+
+
+
+    </a-scene>
+
+
+</body>
+
+</html>
